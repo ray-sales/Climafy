@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>ClimaFy</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header class="header">
+            <h1>ClimaFy</h1>
+            <div class="input-group">
+                <input type="text" class="input" id="city" v-model="address" placeholder="Jundiaí,SP,BR" />
+                <button class="button" v-on:click="getTemperature"><img src="assets/icons/glass-search.svg" /></button>
+            </div>
+        </header>
+        <div id="container">
+            <product-display v-for="track in tracks" :id="track.id" :name="track.name" :link="track.link" :image="track.image" :artist="track.artist"></product-display>
+
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+    <script src="./components/ProductDisplay.js"></script>
+
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+</body>
+
+</html>
